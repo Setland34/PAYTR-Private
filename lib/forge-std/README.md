@@ -245,6 +245,22 @@ import "forge-std/console.sol";
 console.log(someValue);
 ```
 
+## Running Tests on Sepolia Fork
+
+To run tests on a Sepolia fork, you can use the following commands:
+
+```bash
+forge test --fork-url https://sepolia.infura.io/v3/YOURKEY
+```
+
+or
+
+```bash
+forge test --fork-url https://eth-sepolia.g.alchemy.com/v2/YOURKEY
+```
+
+Replace `YOURKEY` with your actual API key from Infura or Alchemy.
+
 ## License
 
 Forge Standard Library is offered under either [MIT](LICENSE-MIT) or [Apache 2.0](LICENSE-APACHE) license.
