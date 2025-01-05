@@ -1,3 +1,4 @@
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
@@ -80,6 +81,7 @@ contract Paytr is Ownable, Pausable, ReentrancyGuard {
        baseAsset = IComet(cometAddress).baseToken();
        wrapperAddress = _wrapperAddress;
        IComet(cometAddress).allow(wrapperAddress, true);
+       ERC20FeeProxyAddress = address(0); // Initialize the ERC20FeeProxyAddress variable
     }
 
     event PaymentERC20Event(address tokenAddress, address payee, address feeAddress, uint256 amount, uint40 dueDate, uint256 feeAmount, bytes paymentReference);
@@ -327,6 +329,10 @@ contract Paytr is Ownable, Pausable, ReentrancyGuard {
         emit SetERC20FeeProxyEvent(_ERC20FeeProxyAddress);
     }
 
+    function getERC20FeeProxy() external view returns (address) {
+        return ERC20FeeProxyAddress;
+    }
+
     function pause() external onlyOwner {
         _pause();
     }
@@ -340,3 +346,4 @@ contract Paytr is Ownable, Pausable, ReentrancyGuard {
     }
 
 }
+```
