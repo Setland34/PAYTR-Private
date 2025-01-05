@@ -34,6 +34,32 @@ Gets the ERC20 fee proxy address.
 function getERC20FeeProxy() external view returns (address)
 ```
 
-This is my commit message
+## Fee Payments
 
-Signed-off-by: Random J Developer <random@developer.example.org>
+The `payInvoiceERC20` function handles fee payments by transferring the specified fee amount to the provided fee address when the payment is due.
+
+### payInvoiceERC20
+
+Handles fee payments by transferring the specified fee amount to the provided fee address when the payment is due.
+
+```solidity
+function payInvoiceERC20(
+    address _payee,
+    address _feeAddress,
+    uint40 _dueDate,
+    uint256 _amount,
+    uint256 _feeAmount,
+    bytes calldata _paymentReference,
+    bool _shouldPayoutViaRequestNetwork
+) external nonReentrant whenNotPaused
+```
+
+### payOutERC20Invoice
+
+Transfers the fee amount to the fee address when the payment is due.
+
+```solidity
+function payOutERC20Invoice(bytes[] calldata payoutReferencesArray) external nonReentrant
+```
+
+The `payInvoiceERC20` function ensures that the fee address is valid and that the total amount, including the fee, is transferred to the contract. The `payOutERC20Invoice` function handles the actual transfer of the fee to the fee address. The fee payments are managed through the `paymentMapping` and the `payOutERC20Invoice` function, ensuring that the fee is paid to the specified address when the payment is due.
