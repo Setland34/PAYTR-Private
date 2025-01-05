@@ -1,13 +1,10 @@
 {
-  "tasks": {
-    "test": "forge install && forge test --fork-url https://sepolia.infura.io/v3/YOURKEY",
-    "build": "forge install",
-    "launch": "forge install"
-  },
+  "name": "Paytr Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
   "extensions": [
-    "ms-azuretools.vscode-docker",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint"
+    "JuanBlanco.solidity",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode"
   ],
   "postCreateCommand": "forge install && forge build"
 }
