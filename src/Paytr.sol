@@ -81,7 +81,7 @@ contract Paytr is Ownable, Pausable, ReentrancyGuard {
        baseAsset = IComet(cometAddress).baseToken();
        wrapperAddress = _wrapperAddress;
        IComet(cometAddress).allow(wrapperAddress, true);
-       ERC20FeeProxyAddress = address(0); // Initialize the ERC20FeeProxyAddress variable
+       ERC20FeeProxyAddress = address(0);
     }
 
     event PaymentERC20Event(address tokenAddress, address payee, address feeAddress, uint256 amount, uint40 dueDate, uint256 feeAmount, bytes paymentReference);
