@@ -3,5 +3,11 @@
     "test": "forge install && forge test --fork-url https://sepolia.infura.io/v3/YOURKEY",
     "build": "forge install",
     "launch": "forge install"
-  }
+  },
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
+  ],
+  "postCreateCommand": "forge install && forge build"
 }

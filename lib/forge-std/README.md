@@ -6,9 +6,29 @@ Forge Standard Library is a collection of helpful contracts and libraries for us
 
 ## Install
 
+To install the Forge Standard Library, run the following command:
+
 ```bash
 forge install foundry-rs/forge-std
 ```
+
+This command will install the Forge Standard Library in your project, which includes helpful contracts and libraries for use with Forge and Foundry.
+
+## Running Tests on Sepolia Fork
+
+To run tests on a Sepolia fork, you can use the following commands:
+
+```bash
+forge test --fork-url https://sepolia.infura.io/v3/YOURKEY
+```
+
+or
+
+```bash
+forge test --fork-url https://eth-sepolia.g.alchemy.com/v2/YOURKEY
+```
+
+Replace `YOURKEY` with your actual API key from Infura or Alchemy.
 
 ## Contracts
 ### stdError
@@ -244,22 +264,6 @@ import "forge-std/console.sol";
 ...
 console.log(someValue);
 ```
-
-## Running Tests on Sepolia Fork
-
-To run tests on a Sepolia fork, you can use the following commands:
-
-```bash
-forge test --fork-url https://sepolia.infura.io/v3/YOURKEY
-```
-
-or
-
-```bash
-forge test --fork-url https://eth-sepolia.g.alchemy.com/v2/YOURKEY
-```
-
-Replace `YOURKEY` with your actual API key from Infura or Alchemy.
 
 ## License
 
