@@ -1,3 +1,4 @@
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
@@ -819,6 +820,11 @@ contract PaytrTest is Test, Paytr_Helpers {
 
     }
 
+    function test_getERC20FeeProxy() public {
+        address feeProxyAddress = Paytr_Test.getERC20FeeProxy();
+        assertEq(feeProxyAddress, address(0x399F5EE127ce7432E4921a61b8CF52b0af52cbfE));
+    }
+
     function test_pauseAndUnpause() public {
         vm.prank(owner);
         Paytr_Test.pause();
@@ -826,3 +832,4 @@ contract PaytrTest is Test, Paytr_Helpers {
     }
 
 }
+```
