@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
 import {Test, console2} from "forge-std/Test.sol";
@@ -359,4 +358,31 @@ contract PaytrTest is Test, Paytr_Helpers {
         );
     }
 
+    function testFail_dueDateTooLowEscrow() public {
+        uint256 amountToPay = 1000e6;
+
+        vm.prank(alice);
+        Paytr_Test.payInvoiceERC20Escrow(
+            bob,
+            dummyFeeAddress,
+            amountToPay,
+            0,
+            paymentReference1,
+            false
+        );
+    }
+
+    function testFail_dueDateTooHighEscrow() public {
+        uint256 amountToPay = 1000e6;
+
+        vm.prank(alice);
+        Paytr_Test.payInvoiceERC20Escrow(
+            bob,
+            dummyFeeAddress,
+            amountToPay,
+            0,
+            paymentReference1,
+            false
+        );
+    }
 }
